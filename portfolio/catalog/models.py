@@ -109,7 +109,13 @@ class Project(models.Model):
     def get_absolute_url(self):
         """Returns the URL to access a detail record for this project."""
         return reverse('project-detail', args=[str(self.id)])
-
+    
+    def display_technologies(self):
+        """Create a string for the technologies in the admin site."""
+        return ', '.join(technology.name for technology in self.technologies.all())
+    
+    display_technologies.short_description = 'technologies'
+   
 class Link(models.Model):
     """Model representing a link."""
 
@@ -133,3 +139,8 @@ class Link(models.Model):
         """String for representing the Model object."""
         return self.name
 
+    def display_link(self):
+        """Create a string for the link in the admin site."""
+        return f'{self.project} ({self.project.category}) - {self.name.upper()}'
+    
+    display_link.short_description = 'link'
