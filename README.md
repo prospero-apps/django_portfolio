@@ -11,3 +11,7 @@ ln this part we’ll create a basic structure of the project, its skeleton. Our 
 ## Part 3 - The Models
 Now it’s time to create the models. In Django, models are just Python classes that represent the data. Each model defines its structure in such a way as to be understood by the underlying database. This means it defines the field types and constraints like maximum size, default values, etc., so that the database knows how to store the data.
 ![image](https://github.com/user-attachments/assets/69d7b7a6-85d1-435a-af23-d2456bf18c2a)
+
+## Part 4 - The Admin Site
+In this part we’ll feed some data to the database and talk about the admin site in general. The admin site is actually an application that we get out of the box when we create a Django website. It’s used to let us easily perform operations like creating, reading (viewing), updating and deleting records, so the typical CRUD operations.
+![image](https://github.com/user-attachments/assets/213d501a-1aae-49d9-be35-5828601d09dd)
