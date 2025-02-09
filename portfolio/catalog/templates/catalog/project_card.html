@@ -1,0 +1,30 @@
+<div class="card">
+    <a href="#">    
+        <img src="{{ project.image.url }}" alt="{{ project.name }}">
+        <div class="card-body">
+            <h5 class="card-title mb-3">{{ project.name }}</h5>
+            <div class="tech-icons">
+                {% for technology in project.technologies.all %}
+                    <div class="single-icon">                        
+                        <i class="{{ technology.icon }}"></i>
+                    </div>
+                {% endfor %}
+            </div>
+
+            {% if project.description|length > 110 %}
+                <p>{{ project.description|slice:":110" }}...</p>
+            {% else %}
+                <p>{{ project.description }}</p>
+            {% endif %}
+
+            <div class="link-icons">
+                {% for link in project.links.all %}
+                    <div class="single-icon">
+                        <i class="{{ link.icon }}"></i>
+                    </div>
+                {% endfor %} 
+            </div>
+            <p class="more-info">Click to view more...</p>
+        </div>
+    </a>
+</div>

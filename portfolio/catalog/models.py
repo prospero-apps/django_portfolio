@@ -81,7 +81,7 @@ class Project(models.Model):
                                    help_text='Enter a description of the project here.')
     
     # image is an image file field - the images will be uploaded to a specified directory.
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='')
           
     # date_added is a DateField field.
     date_added = models.DateField(null=True, 

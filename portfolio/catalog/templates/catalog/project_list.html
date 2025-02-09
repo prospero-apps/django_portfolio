@@ -1,0 +1,33 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+    <h1 class="my-projects-text">My Projects</h1>
+
+    {% if projects is None %}
+        <p><em>Loading...</em></p>
+    {% else %}
+        {% for category, projects in category_projects.items %}
+            <h3 class="category-name">
+                {{ category.name }}
+                {% for cat, count in category_counts %}
+                    {% if cat == category %}
+                        ({{ count }})
+                    {% endif %}
+                {% endfor %}
+            </h3>
+            <ul>
+                <div class="container-fluid">
+                    <div class="row">
+                        {% for project in projects %}
+                            <div class="col-md-6 col-lg-4 mb-2">
+                                {% include "catalog/project_card.html" with project=project %}
+                            </div>                    
+                        {% empty %}
+                            <li>No projects in this category.</li>
+                        {% endfor %}
+                    </div>
+                </div>
+            </ul>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
