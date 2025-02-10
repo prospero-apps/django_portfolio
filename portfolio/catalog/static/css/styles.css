@@ -158,6 +158,10 @@ html, body {
     margin-top: 1em;
 }
 
+.selected {
+    font-weight: bold;
+}
+
 .contact {
     padding-right: 10px;
 }
@@ -270,6 +274,30 @@ main {
     margin-left: 300px;
     margin-top: 350px;
 }
+
+/* PROJECT DETAILS */
+.techs,
+.links {
+    margin-bottom: 20px;
+}
+
+.tech,
+.link {
+    font-size: 18px;
+}
+
+i {
+    padding-right: 20px;
+    width: 40px;
+}
+
+.link a {
+    text-decoration: none;
+}
+
+    .link a:hover {
+        font-weight: bolder;
+    }
 
 @media screen and (max-width: 1400px) { 
     .personal-info-text {

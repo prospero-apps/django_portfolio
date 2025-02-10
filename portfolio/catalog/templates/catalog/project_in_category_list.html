@@ -1,0 +1,21 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+    <h1 class="my-projects-text">Category: {{ selected_category }}</h1>
+
+    {% if projects_in_category is None %}
+        <p><em>Loading...</em></p>
+    {% else %}
+        <div class="container-fluid">
+            <div class="row">
+                {% for project in projects_in_category %}
+                    <div class="col-md-6 col-lg-4 mb-2">
+                        {% include "catalog/project_card.html" with project=project %}
+                    </div>                    
+                {% empty %}
+                    <li>No projects in this category.</li>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

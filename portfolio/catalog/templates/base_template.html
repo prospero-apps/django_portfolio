@@ -22,7 +22,7 @@
         <button class="menu-button" onclick="toggleSidebar()">☰ Menu</button>
 
         <div class="sidebar"> 
-            <a class="sidebar-top" href="/">My Portfolio</a>          
+            <a class="sidebar-top" href="{% url 'index' %}">My Portfolio</a>
 
             <h5 class="list-title">Categories</h5>
             {% if categories is None %}
@@ -31,7 +31,8 @@
                 <div class="scrollable-list">
                     <ul class="list-unstyled">
                         {% for category in categories %}  
-                            <a href="#">
+                            <a href="{% url 'category_view' category.name %}" 
+                               class="{% if selected_category == category.name %}selected{% endif %}">
                                 <div class="list-item">
                                     <i class="{{ category.icon }}"></i>                                             
                                     <span class="list-name">{{ category.name }}</span>
@@ -49,7 +50,8 @@
                 <div class="scrollable-list">
                     <ul class="list-unstyled">
                         {% for technology in technologies %}  
-                            <a href="#">
+                            <a href="{% url 'technology_view' technology.name %}"
+                               class="{% if selected_technology == technology.name %}selected{% endif %}">
                                 <div class="list-item">
                                     <i class="{{ technology.icon }}"></i>                                             
                                     <span class="list-name">{{ technology.name }}</span>
