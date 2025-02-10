@@ -15,3 +15,11 @@ Now it’s time to create the models. In Django, models are just Python classes 
 ## Part 4 - The Admin Site
 In this part we’ll feed some data to the database and talk about the admin site in general. The admin site is actually an application that we get out of the box when we create a Django website. It’s used to let us easily perform operations like creating, reading (viewing), updating and deleting records, so the typical CRUD operations.
 ![image](https://github.com/user-attachments/assets/213d501a-1aae-49d9-be35-5828601d09dd)
+
+## Part 5 - Views and Templates
+In this part of the series, we’ll create all the pages of our application. In particular, we’ll have the following pages:
+- the home (or index) page - it will display information about all the projects,
+- the projects_in_category page - it will display the projects that belong to a specific category,
+- the projects_with_technology page - it will display the projects that implement a specific technology,
+- the detail page - it will display the details of a single project.
+![image](https://github.com/user-attachments/assets/870ea0e7-7025-4dca-afc2-d39e45677a0a)
