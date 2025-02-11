@@ -30,7 +30,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',
 #DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['prosperocoder.pythonanywhere.com', 'localhost']
+
+CSRF_TRUSTED_ORIGINS = ['https://prosperocoder.pythonanywhere.com']
 
 
 # Application definition
